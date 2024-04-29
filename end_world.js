@@ -200,7 +200,7 @@ let render = function(time) {
         if ( playerControls.isLocked === true ) controls.updatePlayerPosition( playerControls, player, playerCollisionBox, playerVelocity, playerDirectionInput, raycaster, scene, timestep );
         
         let playerHit = controls.checkCollisions( enderDragon.collisionBox, playerCollisionBox);
-        if ( playerHit ) playerVelocity = new THREE.Vector3(0,config.KNOCKBACK_VELOCITY_Y,0); 
+        if ( playerHit && !dragonSlain ) playerVelocity = new THREE.Vector3(0,config.KNOCKBACK_VELOCITY_Y,0); 
 
         for (let i = 0; i < endCrystalArray.length; i++ ) { 
             endCrystalArray[i].animate( timestep );
@@ -284,7 +284,7 @@ onKeyDown = onKeyUp = function( event ){
     //if (event.code == "Digit1") selectedItem = 1; // block
     //if (event.code == "Digit2") { selectedItem = 2; // rocket
     
-    if (event.code == "KeyE" && rocketCoolDown <= 0 ) {
+    if (event.code == "KeyE" && rocketCoolDown <= 0 && !paused ) {
         let directionvec = new THREE.Vector3( 0, 0, -1 );
         directionvec.applyQuaternion( playerControls.camera.quaternion );
         for ( let i = 0; i < fireworks.length; i++ ) {

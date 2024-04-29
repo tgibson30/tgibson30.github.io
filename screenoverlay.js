@@ -5,8 +5,8 @@ export class ScreenOverlay {
         var scale = 2;
         canvas.style.width = displayWidth + 'px';
         canvas.style.height = displayHeight + 'px';
-        canvas.width = displayWidth;// * scale;
-        canvas.height = displayHeight;// * scale;
+        canvas.width = displayWidth;
+        canvas.height = displayHeight;
 
         this.context = canvas.getContext('2d');
         this.context.translate(canvas.width/2, canvas.height/2);
@@ -80,11 +80,13 @@ export class ScreenOverlay {
         this.context.fillStyle="grey"
         let text = "Ender Dragon"
         this.context.font="2rem Arial"
-        this.context.fillText(text, -110, -canvas.height/2 + 50 );
+        //this.context.fillText(text, -110, -canvas.height/2 + 50 );
+        this.context.fillText(text, -110, -canvas.height/2.2 );
 
         this.context.fillStyle="purple";
         let barwidth = canvas.width/2;
-        this.context.fillRect(-canvas.width/4, -canvas.height/2 + 80, barwidth * health/100 , 25);
+        //this.context.fillRect(-canvas.width/4, -canvas.height/2 + 80, barwidth * health/100 , 25);
+        this.context.fillRect(-canvas.width/4,-canvas.height/2.3, barwidth * health/100 , 25);
         
         this.context.restore();
     }
