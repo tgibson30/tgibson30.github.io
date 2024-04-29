@@ -117,7 +117,7 @@ let fireworks = [];
 for (let i = 0; i < config.MAX_FIREWORKS; i++) fireworks[i] = new Firework( scene );
 
 function slayDragon( dragonPos, delta ) {
-    const offsetStrength = 2;
+    const offsetStrength = 3;
     enderDragon.body.visible = false;
     dragonSlain = true;
 

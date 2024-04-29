@@ -6,7 +6,7 @@ const globalCenter = new THREE.Vector3( 0, 0, 0 );
 const particleFlightTime = 1000;
 const particleReleaseRate = 10;
 const particleSpeed = 10/5000;
-const particleSize = 0.025;
+const particleSize = 0.05;
 const rocketFlightDuration = 2000;
 const rocketBurstDuration = 3000;
 
