@@ -10,6 +10,9 @@ export class ScreenOverlay {
         canvas.width = displayWidth * scale;
         canvas.height = displayHeight * scale;
 
+        console.log(canvas.width,canvas.height);
+        console.log(displayWidth,displayHeight);
+
         this.context = canvas.getContext('2d');
         this.context.translate(canvas.width/2, canvas.height/2);
     }
