@@ -1,14 +1,12 @@
-const font = ""
-
 export class ScreenOverlay {
     constructor( canvas, displayWidth, displayHeight, params = {} ) {
         this.canvas = canvas;
 
-        var scale = 1;
+        var scale = 2;
         canvas.style.width = displayWidth + 'px';
         canvas.style.height = displayHeight + 'px';
-        canvas.width = displayWidth * scale;
-        canvas.height = displayHeight * scale;
+        canvas.width = displayWidth;// * scale;
+        canvas.height = displayHeight;// * scale;
 
         this.context = canvas.getContext('2d');
         this.context.translate(canvas.width/2, canvas.height/2);
@@ -16,15 +14,15 @@ export class ScreenOverlay {
 
     drawCursor() {
         this.context.save();
+        this.context.scale(0.5, 0.5);
         this.context.fillStyle="grey";
         this.context.fillRect(-25,-2,50,4);
         this.context.fillRect(-2,-25,4,50);
         this.context.restore();
-        this.context.restore();
     }
 
     drawItemBar( selectedItem ) {
-        //this.context.save();
+        this.context.save();
         this.context.fillStyle= "rgba(25,25,25,0.5)";
         this.context.fillRect(-500, canvas.height/2-120, 1000, 120);
 
@@ -34,16 +32,15 @@ export class ScreenOverlay {
             this.context.rect(125 * i - 500, canvas.height/2-120, 125, 125);
             this.context.stroke();
         }
-
-        //this.context.restore();
+        this.context.restore();
     }
 
     drawPauseScreen() {
         this.context.save();
         this.context.fillStyle="rgba(50,50,50,0.6)";
         this.context.fillRect(-canvas.width/2, -canvas.height/2, canvas.width, canvas.height);
-        this.context.restore();
 
+        this.context.scale(0.5, 0.5);
         this.context.fillStyle="white"
 
         let text = "Paused"
@@ -78,6 +75,7 @@ export class ScreenOverlay {
 
     drawEnderDragonStatus( health ) {
         this.context.save();
+        this.context.scale(0.5, 0.5);
 
         this.context.fillStyle="grey"
         let text = "Ender Dragon"
@@ -96,7 +94,6 @@ export class ScreenOverlay {
 
         //this.drawItemBar( params.selectedItem ? Number(params.selectedItem):1 );
         this.drawCursor();
-
         this.drawEnderDragonStatus( Number(params.dragonHealth) )
 
         if ( params.paused ) this.drawPauseScreen();
