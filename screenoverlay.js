@@ -81,12 +81,15 @@ export class ScreenOverlay {
         let text = "Ender Dragon"
         this.context.font="2rem Arial"
         //this.context.fillText(text, -110, -canvas.height/2 + 50 );
-        this.context.fillText(text, -110, -canvas.height/2.2 );
+        //this.context.fillText(text, -110, -canvas.height/2.2 );
+        //this.context.fillText( text, -110, -600 );
+        this.context.fillText(text, -120, -740);
 
         this.context.fillStyle="purple";
         let barwidth = canvas.width/2;
         //this.context.fillRect(-canvas.width/4, -canvas.height/2 + 80, barwidth * health/100 , 25);
-        this.context.fillRect(-canvas.width/4,-canvas.height/2.3, barwidth * health/100 , 25);
+        //this.context.fillRect(-canvas.width/4,-canvas.height/2.3, barwidth * health/100 , 25);
+        this.context.fillRect(-canvas.width/4,-720, barwidth * health/100 , 25);
         
         this.context.restore();
     }
