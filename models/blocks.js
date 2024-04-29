@@ -83,7 +83,7 @@ export class EndCrystal extends T.Object3D{
     let collisionBox = new T.Mesh(collisionBox_geo, collisionBox_mat);
     if ( !SHOW_COLLISION_BOXES ) collisionBox.visible = false;
     collisionBox.geometry.computeBoundingBox();
-    block_group_inner.add(collisionBox);
+    block_group_outer.add(collisionBox);
 
     this.block = block_group_outer;
     this.inner_group = block_group_inner;
