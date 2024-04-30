@@ -1,6 +1,6 @@
 # The End - (Ender Dragon Battle Scene)
 
-This is a student created recreation of the Ender Dragon battle scene from Minecraft, built using the THREE.js framework.
+This is a student created recreation of the Ender Dragon battle scene from Minecraft, built using the THREE.js framework. This is a project 3 submission for Spring 2024 CS559 Computer Graphics course instructed by Professor Young Wu - University of Wisconsin Madison
 
 ## How to Play:
 - Click on the screen to start the game
@@ -23,4 +23,4 @@ Attributions:
 
     Textures:
     - end_stone.png : Retro End Stone | https://www.planetminecraft.com/texture-pack/retro-end-stone/
-    - obsidian .png : Better Obsidian | https://www.planetminecraft.com/texture-pack/better-obsidian-6216227/
+    - obsidian.png : Better Obsidian | https://www.planetminecraft.com/texture-pack/better-obsidian-6216227/
