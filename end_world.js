@@ -177,10 +177,12 @@ let render = function(time) {
             // Ender dragon attack logic
             if ( flightMode == "cruising" && countdownUntilNextAttack > 0 && !paused ) {
                 countdownUntilNextAttack -= timestep;
-            } else if (flightMode == "cruising" && countdownUntilNextAttack <= 0) {
-                target = playerPosition.clone().add( new THREE.Vector3( 0,0,0 ));
-                flightMode = "preparing to attack"
-            } else if (flightMode == "preparing to attack" && atExtremePosition( enderDragon.body.position, flightPath, target, 1 )) {
+            } else if ( flightMode == "cruising" && countdownUntilNextAttack <= 0 ) {
+                if ( playerPosition.y >= 0 ) {
+                    target = playerPosition.clone().add( new THREE.Vector3( 0,0,0 ));
+                    flightMode = "preparing to attack"
+                }
+            } else if ( flightMode == "preparing to attack" && atExtremePosition( enderDragon.body.position, flightPath, target, 1 )) {
                 flightPath = updateFlightPath({ targetFlightPosition:target });
                 flightMode = "attacking";
             } else if ( flightMode == "attacking" && atExtremePosition( enderDragon.body.position, flightPath, target, 0 )) {
