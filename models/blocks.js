@@ -5,7 +5,9 @@ import { BLOCKSIZE, SHOW_COLLISION_BOXES, USE_TEXTURES } from "../config.js";
 
 const block_geo = new T.BoxGeometry(BLOCKSIZE, BLOCKSIZE, BLOCKSIZE);
 let GroundBlockMap = new T.TextureLoader().load("./textures/end_stone.png");
+GroundBlockMap.colorSpace = T.SRGBColorSpace;
 let SpikeBlockMap = new T.TextureLoader().load("./textures/obsidian.png");
+SpikeBlockMap.colorSpace = T.SRGBColorSpace;
 
 export class GroundBlock extends T.Object3D{
   /**
